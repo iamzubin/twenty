@@ -15,6 +15,7 @@ import {
 import { Authorize } from '~/pages/auth/Authorize';
 import { PasswordReset } from '~/pages/auth/PasswordReset';
 import { SignInUp } from '~/pages/auth/SignInUp';
+import { Messages } from '~/pages/messages/Messages';
 import { NotFound } from '~/pages/not-found/NotFound';
 import { RecordIndexPage } from '~/pages/object-record/RecordIndexPage';
 import { RecordShowPage } from '~/pages/object-record/RecordShowPage';
@@ -63,6 +64,10 @@ export const useCreateAppRouter = (
                 isAdminPageEnabled={isAdminPageEnabled}
               />
             }
+          />
+          <Route 
+            path={AppPath.MessagesCatchAll}
+            element={<Messages />}
           />
           <Route path={AppPath.NotFoundWildcard} element={<NotFound />} />
         </Route>

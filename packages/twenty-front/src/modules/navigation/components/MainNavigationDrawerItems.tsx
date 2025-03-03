@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { IconSearch, IconSettings } from 'twenty-ui';
+import { IconMessage, IconSearch, IconSettings } from 'twenty-ui';
 
 import { useCommandMenu } from '@/command-menu/hooks/useCommandMenu';
 import { CurrentWorkspaceMemberFavoritesFolders } from '@/favorites/components/CurrentWorkspaceMemberFavoritesFolders';
@@ -63,6 +63,12 @@ export const MainNavigationDrawerItems = () => {
             }}
             Icon={IconSettings}
           />
+          <NavigationDrawerItem
+            label={t`Messages`}
+            to="/messages"
+            Icon={IconMessage}
+          />
+          {/* SPACES_TODO : Add button for messages */}
         </StyledMainSection>
       )}
       <ScrollWrapper

@@ -32,4 +32,10 @@ export enum AppPath {
   // 404 page not found
   NotFoundWildcard = '*',
   NotFound = '/not-found',
+
+  // Messages 
+  Messages = '/messages',
+  MessagesCatchAll = `/${Messages}/*`,
+  MessagesInbox = '/messages/inbox',
+  MessagesObject = '/messages/objects/:objectNameSingular',
 }

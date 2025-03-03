@@ -99,6 +99,11 @@ export const Default: Story = {
             Icon={IconSettings}
           />
           <NavigationDrawerItem
+            label="Settings"
+            to="/settings/profile"
+            Icon={IconSettings}
+          />
+          <NavigationDrawerItem
             label="Tasks"
             to="/tasks"
             Icon={IconCheckbox}
