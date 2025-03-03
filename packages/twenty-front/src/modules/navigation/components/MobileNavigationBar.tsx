@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil';
 import {
   IconComponent,
   IconList,
+  IconMessage,
   IconSearch,
   IconSettings,
   NavigationBar,
@@ -13,11 +14,17 @@ import {
 import { useIsSettingsPage } from '../hooks/useIsSettingsPage';
 import { currentMobileNavigationDrawerState } from '../states/currentMobileNavigationDrawerState';
 
-type NavigationBarItemName = 'main' | 'search' | 'tasks' | 'settings';
+type NavigationBarItemName =
+  | 'main'
+  | 'messages'
+  | 'search'
+  | 'tasks'
+  | 'settings';
 
 export const MobileNavigationBar = () => {
   const [isCommandMenuOpened] = useRecoilState(isCommandMenuOpenedState);
-  const { closeCommandMenu, openRecordsSearchPage } = useCommandMenu();
+  const { closeCommandMenu, openRecordsSearchPage, openMessagesPage } =
+    useCommandMenu();
   const isSettingsPage = useIsSettingsPage();
   const [isNavigationDrawerExpanded, setIsNavigationDrawerExpanded] =
     useRecoilState(isNavigationDrawerExpandedState);
@@ -49,6 +56,11 @@ export const MobileNavigationBar = () => {
         );
         setCurrentMobileNavigationDrawer('main');
       },
+    },
+    {
+      name: 'messages',
+      Icon: IconMessage,
+      onClick: openMessagesPage,
     },
     {
       name: 'search',
